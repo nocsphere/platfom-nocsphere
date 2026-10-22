@@ -1,0 +1,25 @@
+{
+  "build": {
+    "cpu": "hazard3",
+    "mcu": "nocsphere-soc",
+    "f_cpu": "30000000L",
+    "hwids": [
+      [
+        "0x0403",
+        "0x6010"
+      ]
+    ],
+    "mabi": "ilp32",
+    "march": "rv32imac_zicsr",
+    "mcmodel": "medlow"
+  },
+  "frameworks": [],
+  "name": "Nocsphere SoC",
+  "upload": {
+    "maximum_ram_size": 16384,
+    "maximum_size": 16384,
+    "protocol": "openocd"
+  },
+  "vendor": "Nocsphere",
+  "url": "https://nocsphere.io"
+}
