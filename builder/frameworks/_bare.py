@@ -26,6 +26,7 @@ env.Append(
         "-ffunction-sections",
         "-fdata-sections",
         "--specs=nano.specs",
+        "-Wl,--no-warn-rwx-segments",
         "-Wl,--gc-sections"
     ],
 
