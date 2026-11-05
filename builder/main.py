@@ -103,15 +103,15 @@ upload_target = target_elf
 # if upload_protocol in debug_tools:
 if upload_protocol == "openocd":
     uploader = "openocd"
-    tool_args = [
+    openocd_args = [
         "-f", "./hazard3/nocsphere-ftdi-openocd.cfg"
     ]
-    tool_args.extend([
-        "-c", "init", "-c", "reset halt", "-c", "load_image ${BUILD_DIR}/${PROGNAME}.elf", "-c", "resume", "-c", "exit"
+    openocd_args.extend([
+        "-c", "init", "-c", "reset halt", "-c", "load_image {$SOURCE}", "-c", "resume", "-c", "exit"
     ])
     env.Replace(
         UPLOADER=uploader,
-        UPLOADERFLAGS=tool_args,
+        UPLOADERFLAGS=openocd_args,
         UPLOADCMD="$UPLOADER $UPLOADERFLAGS"
     )
     upload_actions = [env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")]
